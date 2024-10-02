@@ -1,0 +1,108 @@
+table {
+    width: 100%;
+    max-width: 100%; /* Prevents the table from exceeding the screen width */
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    overflow-x: auto; /* Ensures horizontal scroll on small screens if necessary */
+    border: 2px solid #007BFF; /* Blue border around the table */
+}
+
+thead {
+    background-color: #007BFF; /* Blue header */
+    color: white;
+}
+
+th, td {
+    padding: 10px; /* Reduced padding for smaller columns */
+    text-align: left;
+    border: 1px solid #ddd; /* Border for each cell */
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+tr:hover {
+    background-color: #e7f3ff; /* Light blue on hover */
+    transition: background-color 0.2s ease;
+}
+
+button {
+    background-color: #007BFF; /* Blue button */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+td {
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ellipsis for overflow text */
+}
+
+td:first-child, th:first-child {
+    width: 50px; /* Fixed width for the first column */
+}
+
+td:last-child, th:last-child {
+    text-align: center; /* Centered last column */
+}
+
+@media (max-width: 1024px) {
+    table {
+        display: block;
+        overflow-x: auto; /* Allows scrolling on smaller screens */
+        white-space: nowrap; /* Prevents table content from wrapping */
+    }
+
+    thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none; /* Hides the table head on small screens */
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    table {
+        table-layout: auto; /* Ensures table content fits naturally within screen size */
+    }
+}

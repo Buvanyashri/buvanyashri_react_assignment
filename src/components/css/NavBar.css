@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-around; /* Space links evenly */
+    align-items: center;
+    background-color: #6a5ac0; /* Navbar background color */
+    padding: 15px 20px; /* Padding around the navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .navbar a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    padding: 10px 15px; /* Padding for clickable area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  }
+  
+  .navbar a:hover {
+    background-color: #a99de8; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge link on hover */
+  }
+  
+  .navbar a.active {
+    background-color: #a99de8; /* Active link background */
+  }
+  
